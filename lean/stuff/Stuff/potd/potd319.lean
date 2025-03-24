@@ -33,6 +33,12 @@ namespace POTD319
         · refine Utils.interp_lt_bound_max 1 (ev inner x) x (ne_of_lt hyp_inner.right ∘ eq_comm.mp) hypx
         · rw [max_eq_left $ le_of_lt hyp_inner.right]
 
+  -- Construct a set S of polynomials inductively by the rules:
+  --     i) x ∈ S;
+  --     ii) if f(x) ∈ S, then xf(x) ∈ S and x + (1 - x)f(x) ∈ S;
+  -- Prove that there are no two distinct polynomials in S
+  -- whose graphs intersect within the region {0 < x < 1}.
+  -- 
   -- well this was a complete waste of time :')
   theorem main (f g : S) (hyp : ev f ≠ ev g) (x : ℝ) (hypx : 0 < x ∧ x < 1) : ev f x ≠ ev g x := by
     induction f generalizing g x with

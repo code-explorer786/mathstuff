@@ -1,0 +1,80 @@
+\documentclass{article}
+
+\usepackage[a4paper]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{varwidth}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{gensymb}
+\usepackage{mathtools}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\title{IMOSL 2024 attempt}
+\author{ASimpleBeginner}
+
+\begin{document}
+% I should learn how to rice my LaTeX soon...
+\maketitle
+
+\section{A1}
+Notice that, with respect mod \(n\), the entire thing is periodic with period 2. \\
+If \(\alpha = \alpha' + 2\), then
+\begin{align*}
+	\floor{\alpha} + \dots + \floor{n \alpha}
+		&= \floor{\alpha' + 2} + \dots + \floor{n(\alpha' + 2)} \\
+		&= \floor{\alpha'} + 2 + \dots + \floor{n\alpha'} + 2n \\
+		&\equiv \floor{\alpha'} + \dots + \floor{n\alpha} \pmod{n} 
+\end{align*}
+Thus we can WLOG check for \(0 \le \alpha < 2\) and finish off later.
+
+Picking \(n := 2\) gives us that \(0 \le \alpha < \frac{1}{2} \; \lor \; \frac{3}{2} \le \alpha < 2\)
+
+We prove that \(\alpha\) must equal 0 in this case. (After WLOG this means that \(\alpha\) must be an even integer.)
+
+If \(\alpha = 0\) we get
+
+\begin{align*}
+	\floor{\alpha} + \dots + \floor{n \alpha}
+		&= 0 + \dots + 0 = 0
+\end{align*}
+
+and thus the sum is divisible by \(n\) for all \(n\).
+
+If \(0 < \alpha < \frac{1}{2}\) we can pick
+\[n := \ceil*{\frac{1}{a}} \ge 2\]
+such that for all integers \(1 \le k < n\), \(\floor{k \alpha} = 0\), and for \(n\), \(\floor{n \alpha} = 1\) such that
+\begin{align*}
+	n \nmid \floor{\alpha} + \dots + \floor{(n-1) \alpha} + \floor{n \alpha} = 0 + \dots + 0 + 1 = 1 \\
+\end{align*}
+
+We prove this fact. Forall \(1 \le k < n\) --- remembering \(0 < \alpha \le \frac{1}{2}\),
+\[\floor{k\alpha} = 0 \; \Leftrightarrow \; 0 \le k\alpha < 1\]
+
+The first inequality is trivial; the second can be proved as follows:
+
+\begin{align*}
+	&k\alpha \le \left(\ceil*{\frac{1}{a}} - 1\right)\alpha \le 1\\
+	\Leftarrow \; &\ceil*{\frac{1}{a}} - 1 \le \frac{1}{a} \\
+	\Leftarrow \; &\ceil*{\frac{1}{a}} \le \frac{1}{a} + 1 \\
+	\Leftarrow \; &\text{evident}
+\end{align*}
+
+The fact that \(\floor{n\alpha} = 1\) is evident.
+
+Okay, now if \(\frac{3}{2} \le \alpha < 2\) then we can pick
+\[n := \ceil*{\frac{1}{2-a}} \ge 2\]
+such that for all integers \(1 \le k < n\), \(\floor{k\alpha} = k - 1\), but for \(n\), \(\floor{n\alpha} = n - 2\) such that
+\[n \nmid \floor{\alpha} + \dots + \floor{n\alpha} = n^2 - 1\]
+
+
+\end{document}

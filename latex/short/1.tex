@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{varwidth}
+\usepackage[paperwidth=60em]{geometry}
+
+\begin{document}
+Tulis soal menjadi
+\[x^1y^{-1} + y^1z^{-1} + z^1x^{-1} \ge x^1 + y^1 + z^1\]
+
+Kita bisa \textbf{homogenisasi} agar kedua memiliki derajat \(0\):
+\begin{align*}
+\Leftrightarrow && x^1y^{-1} + y^1z^{-1} + z^1x^{-1} &\ge (x^1 + y^1 + z^1)(abc)^{-\frac{1}{3}} \\
+\Leftrightarrow && x^1y^{-1} + y^1z^{-1} + z^1x^{-1} &\ge x^{\frac{2}{3}}y^{-\frac{1}{3}}z^{-\frac{1}{3}} + x^{-\frac{1}{3}}y^{\frac{2}{3}}z^{-\frac{1}{3}} + x^{-\frac{1}{3}}y^{-\frac{1}{3}}z^{\frac{2}{3}} \\
+\end{align*}
+
+Dari sini kita melihat bahwa bentuk soal \emph{hampir mirip} dengan Muirhead, namun apabila melihat dg lebih dekat ternyata bentuknya \emph{siklis} bukan \emph{simetris}. Meskipun itu kita masih bisa mengambil inspirasi.
+
+Kita bisa pakai yang namanya ``Weighted AM-GM'' berbunyi
+\[\frac{a_1x_1 + \dots + a_nx_n}{a_1 + \dots + a_n} \ge \sqrt[a_1 + \dots + a_n]{x_1^{a_1} \cdot \hdots \cdot x_n^{a_n}}\]
+untuk semua \(a_1, \dots, a_n \ge 0\)
+
+Sesuai dengan inspirasi, kita ingin \textbf{mencari} \(a_1, \dots, a_n \ge 0\) dimana
+\begin{align*}
+	&&a_1 + \dots + a_n &= 1 \\
+	\land &&\left(x^1y^{-1}\right)^{a_1} \cdot \left(y^1z^{-1}\right)^{a_2} \cdot \left(z^1x^{-1}\right)^{a_3} &= x^{\frac{2}{3}}y^{-\frac{1}{3}}z^{-\frac{1}{3}} \\
+	\Longleftrightarrow &&x^{a_1-a_3} y^{a_2-a_1} z^{a_3-a_2} &= x^{\frac{2}{3}}y^{-\frac{1}{3}}z^{-\frac{1}{3}} \\
+	\Longleftarrow && a_1 - a_3 = \frac{2}{3} \qquad a_2 - a_1 &= -\frac{1}{3} \qquad a_3 - a_2 = -\frac{1}{3}
+\end{align*}
+
+Kita ketemu
+\begin{align*}
+a_1 = \frac{2}{3} && a_2 = \frac{1}{3} && a_3 = 0
+\end{align*}
+
+Jadi kita bisa bantai soalnya. Perhatikan format
+
+\[\mathbf{a_1(x^1 y^{-1}) + a_2(y^1 z^{-1}) + a_3(z^1 x^{-1}) \ge} \left(x^1y^{-1}\right)^{a_1} \cdot \left(y^1z^{-1}\right)^{a_2} \cdot \left(z^1x^{-1}\right)^{a_3} = \mathbf{x^{\frac{2}{3}}y^{-\frac{1}{3}}z^{-\frac{1}{3}}}\]
+
+Jadi:
+
+\begin{align*}
+a_1(x^1 y^{-1}) + a_2(y^1 z^{-1}) + a_3(z^1 x^{-1}) &\ge x^{\frac{2}{3}}y^{-\frac{1}{3}}z^{-\frac{1}{3}} \\
+a_3(x^1 y^{-1}) + a_1(y^1 z^{-1}) + a_2(z^1 x^{-1}) &\ge x^{-\frac{1}{3}}y^{\frac{2}{3}}z^{-\frac{1}{3}} \\
+a_2(x^1 y^{-1}) + a_3(y^1 z^{-1}) + a_1(z^1 x^{-1}) &\ge x^{-\frac{1}{3}}y^{-\frac{1}{3}}z^{\frac{2}{3}} \\ \\
+(a_1 + a_2 + a_3)(x^1 y^{-1} + y^1 z^{-1} + z^1 x^{-1}) &\ge x^{\frac{2}{3}}y^{-\frac{1}{3}}z^{-\frac{1}{3}} + x^{-\frac{1}{3}}y^{\frac{2}{3}}z^{-\frac{1}{3}} + x^{-\frac{1}{3}}y^{-\frac{1}{3}}z^{\frac{2}{3}} \\
+x^1 y^{-1} + y^1 z^{-1} + z^1 x^{-1} &\ge x^{\frac{2}{3}}y^{-\frac{1}{3}}z^{-\frac{1}{3}} + x^{-\frac{1}{3}}y^{\frac{2}{3}}z^{-\frac{1}{3}} + x^{-\frac{1}{3}}y^{-\frac{1}{3}}z^{\frac{2}{3}} \\
+\mathbf{x^1y^{-1} + y^1z^{-1} + z^1x^{-1}} &\ge \mathbf{x^1 + y^1 + z^1} \quad \Box
+\end{align*}
+
+\end{document} 

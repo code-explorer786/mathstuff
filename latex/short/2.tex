@@ -1,0 +1,54 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{varwidth}
+
+\begin{document}
+The problem is equivalent to
+\begin{align*}
+&\forall a \in \text{range } f, b \in \mathbb{R} \\
+&f(a + b) = a + f(b)
+\end{align*}
+\textbf{Backward:} \par
+let a nonempty \(G \subseteq \mathbb{R}\) such that \(G\) is closed under addition and subtraction (equivalently, negation) (\(G\) will be \(\text{range } f\) in the forward case later)
+\begin{align*}
+    \forall x,y \in G \qquad & x + y \in G \\
+    \forall x,y \in G \qquad & x-y \in G \\
+\end{align*}
+(notice this also means \(0 \in G\))
+%and let there be a relation
+%\[a \sim b := a - b \in G\]
+%proven that it is reflexive, transitive and symmetric
+we can utilize the partition \({\mathbb{R}/G = \{x + G \mid x \in \mathbb{R}\}}\). \par
+By the mighty hand of the \textbf{Axiom of Choice} pick a set \({X \subseteq \mathbb{R}, X \cong \mathbb{R}/G}\) (let the bijection be \(h\)) such that the family \({\{x + G \mid x \in X\}}\) is disjoint and unionize to \(\mathbb{R}\). We can thus pick any \({f' : X \rightarrow G}\), from which we can derive \(f : \mathbb{R} \rightarrow G\):
+\[f(x) = f'(h^{-1}(x + G)) + x - h^{-1}(x+G)\]
+We can prove the property above. For any \(a \in \text{range } f \subseteq G\) and \(b \in \mathbb{R}\),
+\begin{align*}
+f(a+b) &= f'(h^{-1}(a + b + G)) + a + b - h^{-1}(a + b +G) \\
+&= a + f'(h^{-1}(b + G)) + b - h^{-1}(b +G) \\
+&= a + f(b)
+\end{align*}
+
+\textbf{Forward:}
+For any \(f\) that satisfies let \({G := \text{range } f}\). Then we can prove the properties of \(G\) needed:
+\begin{align*}
+\forall x,y \in G \quad &\exists z \quad f(z) = y \\
+&x + y = x + f(z) = f(x + z) \in G \\
+\forall x,y \in G \quad &\exists z \quad f(z) = x \\
+&x = f(z) = f(y + z - y) = y + f(z - y) \\
+&x - y = f(z - y) \in G
+\end{align*}
+Thus with the mighty hand of the \textbf{Axiom of Choixe} thus we pick \(X \subseteq \mathbb{R}\) and \(h: X \cong \mathbb{R}/G\) we can extract
+\[f'(x) = f(x)\]
+It's easy to notice that backward done with forward we get the same result. We prove that, when forward is done and backward, we get the same result. Pick any \(x \in \mathbb{R}\). Then \(x = x' + a\) for some \(x' \in X\) and \(a \in G\). Thus
+\begin{align*}
+f'(h^{-1}(x + G)) + x - h^{-1}(x+G) &= f(x') + x - x' \\
+&= f(x') + a \\
+&= f(x' + a) \\
+&= f(x)
+\end{align*}
+and thus WE ARE DONE.
+
+\end{document}

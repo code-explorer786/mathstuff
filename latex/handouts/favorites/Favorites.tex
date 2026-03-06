@@ -43,11 +43,12 @@
 \usepackage{ragged2e}
 \usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage{asymptote}
+% \usepackage{asymptote}
 \usepackage{twemojis}
 \usepackage{gensymb}
 \usepackage[super]{nth}
 \usepackage{enumitem}
+\usepackage{scrambledenvs}
 
 %%% HEADERS & FOOTERS
 \usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
@@ -78,11 +79,13 @@
 \theoremstyle{remark}
 \newtheorem*{lemma}{Lemma}
 
+\newscrambledenv{talk}
+
 %%% END Article customizations
 
 %%% The "real" document content comes below...
 
-\title{\textbf{Favorites} \\ \normalsize A compilation of problems --- Definitely a draft}
+\title{\textbf{Favorites} \\ \normalsize A compilation of problems --- Might be a draft}
 \author{\texttt{asimplebeginner} (\href{https://discord.gg/mods}{Discord}) aka \texttt{TimeDependentSubset} (\href{https://artofproblemsolving.com/community/user/1281032}{AoPS})}
 %\date{} % Activate to display a given date or no date (if empty),
          % otherwise the current date is printed 
@@ -104,7 +107,7 @@
 
 About a year ago, when I was in \nth{9} grade, practicing for the city-level stage of INAMO (Indonesian Mathematical Olympiad)\footnote{Indonesians call it ``OSK Matematika''.}, I was browsing the Internet in a gloomy mood, when I decided to enter a Discord invite I was first hesitant about. It was an invite to the \href{https://discord.gg/mods}{Mathematical Olympiads Discord Server}, a (partnered) Discord server with a focus on Mathematical Olympiads, as the name implies.
 
-There I found\footnote{...A year ago. Nowadays (in my opinion) it's kinda dead, but at least the bot works.}, along with wonderful people, the amazing volunteer-based \emph{Problem Of The Day} system held up by the server's internal bot \texttt{MODSBot}. It presented to me a myriad of problems\footnote{As of writing, \textbf{2534} problems and counting!} sourced from competitions, big and small, niche and popular; with problems easy and hard, gross and beautiful, long and short, all in the 4 flavours \emph{Algebra}, \emph{Combinatorics}, \emph{Geometry}, and \emph{Number Theory}. There I grinded, together and alone, 'till as of writing I marked \textbf{216} problems as \emph{solved}!
+There I found\footnote{...A year ago. Nowadays (in my opinion) it's kinda dead, but at least the bot works.}, along with wonderful people, the amazing volunteer-based \emph{Problem Of The Day} system held up by the server's internal bot \texttt{MODSBot}. It presented to me a myriad of problems\footnote{As of writing, \textbf{2534} problems and counting!} sourced from competitions, big and small, niche and popular; with problems easy and hard, gross and beautiful, long and short, all in the 4 flavours \emph{Algebra}, \emph{Combinatorics}, \emph{Geometry}, and \emph{Number Theory}. There I grinded, together and alone, 'till as of writing I marked \textbf{217} problems as \emph{solved}!
 
 And now, after a year, I'm here, typing this document, eager to share it all. The purpose of this document is so that I can show off all of the \textcolor{purple!80!black}{cool gems} I found over the year, ``favorite'' problems I find to be interesting (or rather instructive), or that I find simply funny.
 
@@ -160,9 +163,11 @@ Here lies the treasure!
 
 Even though the title of this document is ``Favorites'', I'll also sprinkle in some problems I find instructive/introductory\footnote{A lot of overlap.}, and/or funny/interesting.
 
-This is divided into the 4 flavors\footnote{There's some overlap between them, one I like is Combinatorial Algebra (Algebra and Combinatorics)}, and in each I'll try to order the problems based off how much I like it in general. It's imperfect, though, and I really don't want to think about ordering these problems either.
+This is divided into the 4 flavors/genres\footnote{There's some overlap between them, one I like is Combinatorial Algebra (Algebra and Combinatorics)}, and in each I'll try to order the problems based off how much I like it in general. It's imperfect, though, and I really don't want to think about ordering these problems either.
 
-To make it clear, \textbf{I'm not ordering them based on difficulty.} If you're stuck (and you're \emph{sure} stuck) on a problem, try to ask (ask \emph{real people, please.}), or you can leave the problem for later.\footnote{These problems personally took me around \textbf{1 hour - 4 hours} each (well except for a select few others). They were satisfying, though.} Most importantly, \textcolor{orange}{\textbf{have fun!}}
+To make it clear, \textbf{I'm not ordering them based on difficulty.} If you're stuck (and you're \emph{sure} stuck) on a problem, try to ask (ask \emph{real people, please.}), or you can leave the problem for later.\footnote{These problems personally took me around \textbf{1 hour - 4 hours} each (well except for a select few others). They were satisfying, though.} I'll also include some \emph{talk} about the problems, but they're more closer to my \emph{commentary} of the problem than a \emph{hint}.\footnote{One of the lessons I'm still learning about today is to think twice before asking for a hint; that's why I'll try to keep the "talks" not as helpful. When you do actually read the commentary, try to explore what it means! If you really want hints though, go ask around \texttt{:)}}
+
+Most importantly, \textcolor{orange}{\textbf{have fun!}}
 
 \subsection{\texttt{A} Algebra}
 \setcounter{problem}{0}
@@ -171,6 +176,14 @@ To make it clear, \textbf{I'm not ordering them based on difficulty.} If you're 
     Let \(b_1,b_2,\ldots, b_n\) be a sequence of nonnegative reals satisfying \(b_1 \geq b_2 \geq b_3 \geq \dots \geq b_n\). Determine the largest real constant \(c\) such that for any sequences of real numbers \(a_1, a_2, a_3, \ldots\) satisfying \(a_i + a_j \geq a_{i + j}\) for all positive integers \(i\leq j\), the inequality
     \[a_1b_1+a_2b_2+\cdots + a_nb_n \geq c a_{n+1}\]
     holds.
+    \begin{talks}
+        \begin{talk}
+            Felt like combing hair tbh.
+        \end{talk}
+        \begin{talk}
+            \texttt{Deathwing} is one of my friends I met during OSN/INAMO. Hiiiiiiiiii \texttt{>w<}
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 557]
@@ -179,14 +192,53 @@ To make it clear, \textbf{I'm not ordering them based on difficulty.} If you're 
     Suppose that for each pair of points \(X, Y \in \mathbb{R}^2\) the points \(f(X)\) and \(f(Y)\) satisfy the inequality
     \[d(f(X), f(Y)) \leq 0.999 \hspace{0.1cm} d(X, Y)\]
     Show that there is a unique point \(P \in \mathbb{R}^2\) that satisfies \(f(P) = P.\)
+    \begin{talks}
+        \begin{talk}
+            Apparently I heard that this problem could be generalized to any (complete) metric spaces, whatever that means...
+        \end{talk}
+        \begin{talk}
+            This is an example of a bizzare type of problem that appears in POTD. In the spreadsheet it has the tag \texttt{X}, aka "Outside IMO Scope". There are other examples of this, but most of them are above my level...
+
+            Yeah you definitely don't need to study metric spaces or topology to train for olympiads \twemoji{skull}
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 958]
     Let \(X, Y\) be subsets of \(\mathbb{R}^2\). Say a function \(f : X \to Y\) is continuous if for any \(\varepsilon > 0\), there exists a \(\delta > 0\) such that for any \(x_1, x_2 \in X\) with \(|x_1 - x_2| < \delta\) we have \(|f(x_1) - f(x_2)| < \varepsilon\). Say \(X\) and \(Y\) are homemorphic if there exists a continuous bijection \(f : X \to Y\) such that \(f^{-1}\) is continuous. Is \(\mathbb{R}^2\) homeomorphic to \(\mathbb{R}^2 \backslash \{(0,0)\}\)?
+    \begin{talks}
+        \begin{talk}
+            This is firmly outside the scope of olympiads.
+        \end{talk}
+        \begin{talk}
+            Lucky I ever solved this, because I've read the related material (although only a little bit). I should maybe seriously learn stuff like this someday... (I'm lazy \twemoji{melting face})
+        \end{talk}
+        \begin{talk}
+            For how I solved this, look up ``fundamental groups''.
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 1334]
     Find all functions \(f:\mathbb{R}\rightarrow\mathbb{R}\) such that for all \(x,y\in\mathbb{R}\) the following equality holds \[ f(\left\lfloor x\right\rfloor y)=f(x)\left\lfloor f(y)\right\rfloor \] where \(\left\lfloor a\right\rfloor \) is greatest integer not greater than \(a\).
+    \begin{talks}
+        \begin{talk}
+            This is a subgenre called \emph{Functional Equations}. Most of the time you'll have statements involving a function \(f: A \rightarrow B\) from domain \(A\) to codomain \(B\), some variables and some constants. The goal is to find all functions \(f\) that satisfy some property. I recommend you (the reader) to look into these types of problems, they're fun \texttt{:D}
+        \end{talk}
+    \end{talks}
+\end{problem}
+
+\begin{problem}[POTD 1895]
+    Prove that every positive integer can be written as a finite sum of distinct integral powers of the golden ratio.
+    \begin{talks}
+        \begin{talk}
+            Fun type of induction! Usually you'll have \(P(x) \Rightarrow P(x+1)\) for some logical predicate \(P\), but this time you'll have to get a bit more creative \texttt{:D}
+        \end{talk}
+        \begin{talk}
+            I'll save you the trouble:
+            \[\varphi^2 = \varphi + 1\]
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 844]
@@ -197,6 +249,12 @@ To make it clear, \textbf{I'm not ordering them based on difficulty.} If you're 
         \item \(f(s_1)\neq f(s_2)\) for any two separated sequences \(s_1,s_2\in S\);
         \item For any constant sequence \(s=(c,c,c,\dots)\in S\), we have \(f(s)=c\). 
     \end{enumerate}
+    \begin{talks}
+        \begin{talk}
+            A sequence can be interpreted as a function \(\mathbb{Z}^+ \rightarrow \mathbb{Z}^+\), so in this case this FE has the funny type signature
+            \[f: (\mathbb{Z}^+ \rightarrow \mathbb{Z}^+) \rightarrow \mathbb{Z}^+\]
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \subsection{\texttt{C} Combinatorics}
@@ -204,14 +262,40 @@ To make it clear, \textbf{I'm not ordering them based on difficulty.} If you're 
 
 \begin{problem}[POTD 2132]
     Let \(f \colon \mathbb{R} \to \mathbb{R}\) be a bijective function. Does there always exist an infinite number of functions \(g \colon \mathbb{R} \to \mathbb{R}\) such that \(f(g(x))=g(f(x))\) for all \(x \in \mathbb{R}\)?
+    \begin{talks}
+        \begin{talk}
+            This has been the most liked problem of mine until recently \twemoji{face with open mouth}
+        \end{talk}
+        \begin{talk}
+            This was my personal introduction to the (really cool!) \emph{sub}subgenre \emph{Arrow FE}, aka \emph{Functional Equations} combined with \emph{Graph Theory}.
+
+            The problem itself was intuitive; I solved this problem almost instantaneously, though writing it up took me \emph{all day...} The same idea behind this problem can be echoed through the entire subgenre (at least what I'm aware of), but in my opinion this problem distills/presents the idea in its bare form really well.
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 1621]
     Let \(\mathbb{N}\) be the set of positive integers. Determine all positive integers \(k\) for which there exist functions \(f : \mathbb{N} \to \mathbb{N}\) and \(g : \mathbb{N} \to  \mathbb{N}\) such that \(g\) assumes infinitely many values and such that \[f^{g(n)}(n) = f(n) + k\] holds for every positive integer \(n\).
+    \begin{talks}
+        \begin{talk}
+            Have fun constructing \texttt{:)} A diagram really helps in these dire times.
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 320]
     On an infinite square grid we place finitely many \emph{cars}, which each occupy a single cell and face in one of the four cardinal directions. Cars may never occupy the same cell. It is given that the cell immediately in front of each car is empty, and moreover no two cars face towards each other in the same row or column (no right-facing car is to the left of a left-facing car within a row, etc.). In a \emph{move}, one chooses a car and shifts it one cell forward to a vacant cell. Prove that there exists an infinite sequence of valid moves using each car infinitely many times. 
+    \begin{talks}
+        \begin{talk}
+            You should \emph{really} avoid spoilers for this problem in particular. You'll regret it.
+        \end{talk}
+        \begin{talk}
+            Took me 4 hours. Take your time.
+        \end{talk}
+        \begin{talk}
+            Very funny problem. The intended solution takes up \(\frac{1}{2}\) of a page.
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 1874]
@@ -254,10 +338,25 @@ To make it clear, \textbf{I'm not ordering them based on difficulty.} If you're 
 
 \begin{problem}[POTD 1718]
     Let \(2^{[n]}\) denote the set of subsets of \([n] := \{1,2,\ldots,n\}\). Find all functions \(f:2^{[n]} \rightarrow 2^{[n]}\) which satisfy \[|A \cap f(B)| = |B \cap f(A)|\] for all subsets \(A\) and \(B\) of \([n]\).
+    \begin{talks}
+        \begin{talk}
+            I'm not even sure why they labelled this as \texttt{CA} instead of just \texttt{C}. I mean, look at it, the domain and codomain are \emph{sets of subsets!}
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 1566]
     Prove that, for any positive integer \(n\), there are equally many ways to partition a set of \(n\) objects into piles of distinct sizes as ways to partition the set into piles of odd sizes.
+    \begin{talks}
+        \begin{talk}
+            I remember the time during my junior highschool days when my tutor sent me this as "homework" (there's no deadline). I occasionally thought about the problem for about \textbf{3 months} before I stumbled upon the solution while reading something on LibreTexts.
+
+            That was fun. Good intro for \emph{Generating Functions} also.
+        \end{talk}
+        \begin{talk}
+            There's actually a clever bijective solution (no generating functions). Broke my heart when I saw it.
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \subsection{\texttt{G} Geometry}
@@ -270,6 +369,11 @@ Oh well, I could use some filler.
 \begin{problem}[POTD 1524]
     The incircle \(\omega\) of a triangle \(ABC\) is tangent to sides \(BC\), \(CA\) and \(AB\) at \(D\), \(E\) and \(F\) respectively. Let \(M\) be the midpoint of \(EF\). Let lines \(AD\) and \(EF\) intersect at \(P\). Let the circumcircle of triangle \(AMP\) meets \(AB\) and \(AC\) again at \(X\) and \(Y\) respectively. Let the tangents to the circumcircle of triangle \(AXY\) at \(X\) and \(Y\) meet at a point \(Z\).
     \\ Prove that the circle with centre \(Z\) that goes through \(M\) is orthogonal to the circumcircle of triangle \(AEF\).
+    \begin{talks}
+        \begin{talk}
+            This problem's made by a friend. Thanks Atavic/Nolao! (He's called \verb|AlephG_64| on AoPS.)
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[Cevian Nest]
@@ -280,22 +384,70 @@ Oh well, I could use some filler.
     Let \(A'' \in B'C'\), \(B'' \in C'A'\), \(C'' \in A'B'\) such that \(A'A''\), \(B'B''\), \(C'C''\) concur.
 
     Prove that the lines \(AA''\), \(BB''\), \(CC''\) concur.
+    \begin{talks}
+        \begin{talk}
+            Cool use of the \(\prod\) notation. I rarely see those outside of ineq...
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[This was from my homework smh]
     Let \(M\) and \(N\) be distinct points on the plane of \(\triangle ABC\) such that
     \[AM : BM : CM = AN : BN : CN\]
     Prove that \(M - N - O\) (\(M\), \(N\) and \(O\) are collinear) where \(O\) is the circumcenter of \(\triangle ABC\).
+    \begin{talks}
+        \begin{talk}
+            A \emph{locus} is a set of points that satisfy some property. Usually they'll become a nice shape/curve. If you graph the set of points \(X\) such that \(AM : BM = AX : BX\), what do they look like?
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[Simon line gaming. Also from my homework]
     Let \((ABCD)\) be a cyclic quadrilateral.
     \begin{enumerate}[label=(\alph*)]
         \item Let \(D_A\) be the foot of the perpendicular from \(D\) to \(BC\), that is, \(D_A \in BC\) with \(D_AD \perp BC\). Define \(D_B \in AC\) and \(D_C \in AB\) similarly. Show that \(D_A - D_B - D_C\) (\(D_A\), \(D_B\), \(D_C\) are collinear.)
-        \item Let \(\ell_D\) be the line \(D_A - D_B - D_C\), and define \(\ell_A\), \(\ell_B\), \(\ell_C\) similarly\footnote{I can see you trying to draw \(A_B\), \(A_C\), \(A_D\), \(B_A\), \(B_C\), \(B_D\), \(C_A\), \(C_B\), \(C_D\), \(D_A\), \(D_B\), \(D_C\)...}. Prove that \(\ell_A\), \(\ell_B\), \(\ell_C\), \(\ell_D\) concur at one point.
+        \item Let \(\ell_D\) be the line \(D_A - D_B - D_C\), and define \(\ell_A\), \(\ell_B\), \(\ell_C\) similarly. Prove that \(\ell_A\), \(\ell_B\), \(\ell_C\), \(\ell_D\) concur at one point.
     \end{enumerate}
+    \begin{talks}
+        \begin{talk}
+            I can see you trying to draw \(A_B\), \(A_C\), \(A_D\), \(B_A\), \(B_C\), \(B_D\), \(C_A\), \(C_B\), \(C_D\), \(D_A\), \(D_B\), and \(D_C\)...
+        \end{talk}
+        \begin{talk}
+            Apparently this is called "Config Geo", geometry problems derived from a variety of configurations. This problem in particular is from the \emph{Orthocenter} configuration.
+
+            I'm not qualified to talk about this, go ask someone better than me in geometry \texttt{:)} (It's a low bar.)
+        \end{talk}
+    \end{talks}
 \end{problem}
 
+\begin{problem}[Brocard's Theorem (one part of it)]
+    Let \(ABCD\) be a cyclic quadrilateral with circumcenter \(O\). Let \(P = AC \cap BD\), \(Q = AD \cap BC\), \(R = AB \cap CD\) (take points of infinity if the lines are parallel).
+
+    Prove that \(O\) is the orthocenter of \(\triangle PQR\).
+    \begin{talks}
+        \begin{talk}
+            There's more to this theorem. You can prove that \(QR\) is the polar of \(P\), i.e. when you take \(P' \in PO\) such that \(OP \cdot OP'\), then \(\angle QP'P = \angle RP'P = 90 \degree\). Similarly goes for the others.
+        \end{talk}
+    \end{talks}
+\end{problem}
+
+\begin{problem}[POTD 428]
+    Two chords, \(A C\) and \(B D\), in a circle with centre \(O\), intersect at \(E .\) The circumcircles of triangles \(E A B\) and \(E C D\) intersect again at \(F .\) Prove \(O F\) is perpendicular to \(E F\).
+    \begin{talks}
+        \begin{talk}
+            If you squint hard enough, this is equivalent to a part of Brocard's Theorem.
+        \end{talk}
+    \end{talks}
+\end{problem}
+
+\begin{problem}[Also from my homework]
+    Let \(ABCD\) be a quadrilateral with a tangent incircle \(\Gamma\), such that \(\Gamma\) is tangent to \(AB\) at \(X_{AB}\), tangent to \(BC\) at \(X_{BC}\), tangent to \(CD\) at \(X_{CD}\), and tangent to \(DA\) at \(X_{DA}\). Prove that \(AC\), \(BD\), \(X_{AB} X_{CD}\), \(X_{BC} X_{DA}\) are concurrent.
+    \begin{talks}
+        \begin{talk}
+            If you squint hard enough, you can prove Brocard's Theorem from this.
+        \end{talk}
+    \end{talks}
+\end{problem}
 
 \subsection{\texttt{N} Number Theory}
 \setcounter{problem}{0}
@@ -303,6 +455,11 @@ Oh well, I could use some filler.
 \begin{problem}[POTD 1782]
     Let \(\mathbb N\) denote the set of positive integers. A function \(f\colon\mathbb N\to\mathbb N\) has the property that for all positive integers \(m\) and \(n\), exactly one of the \(f(n)\) numbers
     \[f(m+1),f(m+2),\ldots,f(m+f(n))\]is divisible by \(n\). Prove that \(f(n)=n\) for infinitely many positive integers \(n\).
+    \begin{talks}
+        \begin{talk}
+            They call me weird because I use formal logic notation all over the place \texttt{:>}
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 831]
@@ -313,6 +470,11 @@ Oh well, I could use some filler.
         \item \(P^m(0)\) is divisible by \(n\).
     \end{itemize}
     Here \(P^k\) means \(P\) applied \(k\) times, so \(P^1(0) = P(0)\), \(P^2(0) = P(P(0))\), etc.
+    \begin{talks}
+        \begin{talk}
+            Cool solution set! Also, this is (in my opinion) a heavy application of \emph{Arrow FE}.
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 2104]
@@ -325,6 +487,11 @@ Oh well, I could use some filler.
         \item Show that the sequence can be unbounded.
         \item Do there necessarily exist \(i \neq j\) such that \(a_i = a_j\)?
     \end{enumerate}
+    \begin{talks}
+        \begin{talk}
+            Saw someone crashing out over this. Personally, I don't see what's wrong with this problem \texttt{:')}
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \begin{problem}[POTD 1956]
@@ -343,6 +510,11 @@ Oh well, I could use some filler.
     Determine all sequences \(a_1, a_2, \dots\) of positive integers such that for any pair of positive integers \(m\leqslant n\), the arithmetic and geometric means
     \[ \frac{a_m + a_{m+1} + \cdots + a_n}{n-m+1}\quad\text{and}\quad (a_ma_{m+1}\cdots a_n)^{\frac{1}{n-m+1}}\]
     are both integers.
+    \begin{talks}
+        \begin{talk}
+            No, just because Arithmetic Mean is mentioned doesn't mean it's an arithmetic sequence. \texttt{XD}
+        \end{talk}
+    \end{talks}
 \end{problem}
 
 \subsection{Auxiliary/Other problems}
@@ -350,7 +522,26 @@ Oh well, I could use some filler.
 
 \begin{problem}[POTD 1362, genre \texttt{ACN}]
     Let \(n \geqslant 100\) be an integer. Ivan writes the numbers \(n, n+1, \ldots, 2 n\) each on different cards. He then shuffles these \(n+1\) cards, and divides them into two piles. Prove that at least one of the piles contains two cards such that the sum of their numbers is a perfect square.
+    \begin{talks}
+        \begin{talk}
+            As of writing, this is the only unique \texttt{d7 ACN} on the POTD spreadsheet!
+        \end{talk}
+    \end{talks}
 \end{problem}
+
+\begin{problem}[POTD 45, (personal opinion) genre \texttt{CN}]
+    Let \(p \geq 2\) be a prime number.
+    Eduardo and Fernando play the following game making moves alternately: in each move, the current player chooses an index \(i\) in the set \(\{0,1,\dots,p-1 \}\) that was not chosen before by either of the two players and then chooses an element \(a_i\) of the set \(\{0,1,2,3,4,5,6,7,8,9\}\).
+    Eduardo has the first move. The game ends after all the indices \(i \in \{0,1,\dots,p-1\}\) have been chosen. Then the following number is computed:
+    \[M = a_0 + 10\cdot a_1 + \dots + 10^{p-1} \cdot a_{p-1} = \sum_{j=0}^{p-1} a_j \cdot 10^j.\]
+    The goal of Eduardo is to make the number \(M\) divisible by \(p\), and the goal of Fernando is to prevent this. Prove that Eduardo has a winning strategy.
+\end{problem}
+
+\newpage
+
+\section{Talk/Discussion/Commentary}
+
+\printtalk
 
 \newpage
 \section*{After the dust settles}
